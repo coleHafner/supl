@@ -20,7 +20,7 @@
 #include <PDU.h>
 #include <ULP-PDU.h>
 
-#define SUPL_PORT "7275"
+#define SUPL_PORT "7276"
 
 /* error messages */
 

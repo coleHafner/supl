@@ -304,7 +304,7 @@ int main(int argc, char *argv[]) {
   supl_ctx_t ctx;
 
   supl_ctx_new(&ctx);
-  server = "supl.nokia.com";
+  server = "supltest.gpstream.net";
 
   while (1) {
     int opt_index;
