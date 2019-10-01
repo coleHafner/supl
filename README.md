@@ -1,4 +1,4 @@
-= What this is about =
+# What this is about
 
 This is an implementation of OMA SUPL and 3GPP RRLP protocols used in
 Assisted GPS (AGPS). Only client (mobile) initiated case is implemented.
@@ -11,7 +11,7 @@ The package provides 2 user level executables
 and supporting SUPL/RRLP library libsupl.
 
 
-== supl-client ==
+## supl-client
 
 supl-client connect to a SUPL server over the Internet and gets GPS
 assistance (A-GPS) data, like satellite ephemeris and almanac data
@@ -50,7 +50,7 @@ With test options '-t 0', '-t 1' or '-t 2' you  get a quick feeling
 how and if things will work - if they work ;-)
 
 
-== supl-proxy ==
+## supl-proxy
 
 Usage:
 supl-proxy supl-server
@@ -73,7 +73,7 @@ The proxy server must be given a server sertificate (signed by the
 root certificate) and private key. The proxy reads them from
 cert/srv-{cert,priv}.pem files.
 
-=== How to generate keys and certificates ===
+### How to generate keys and certificates
 
 ** You can skip this section if you do not use supl-proxy **
 
@@ -95,9 +95,9 @@ store. Make sure to give it SSL trust.
 supl-proxy expects to find srv-cert.pem and src-priv.pem from the
 current directory. CA private key ca-priv.pem is not needed anymore.
 
-= Compiling =
+# Compiling
 
-== Compile without ASN.1 compiler ==
+## Compile without ASN.1 compiler
 
 If you do not have asn1c (http://lionet.info/asn1c) available do:
 
@@ -108,7 +108,7 @@ If you do not have asn1c (http://lionet.info/asn1c) available do:
 That's it.
 
 
-== Compile with ASN.1 compiler  ==
+## Compile with ASN.1 compiler 
 
 You should use asn1c version 0.9.23, there are some issues with
 earlier versions.
@@ -135,14 +135,14 @@ Then proceed with compiling this stuff
 ~/src/supl $ sudo make install
 
 
-== Fixing ASN specs ==
+## Fixing ASN specs
 
 There is a confict with NavigationModel which is defined by both supl
 and rrlp. Rename defination and every reference to NavigationModel
 with XNavigationModel in src/supl-posinit.asn.
 
 
-== ASN.1 compilation from sources ==
+## ASN.1 compilation from sources
 
 Generation of compiled C-files from ASN.1 sources should happen
 automatically with make. But if you add new ASN.1 files or PDUs you
@@ -154,7 +154,7 @@ You can give path to asn1c skeleton files to configure script as
 ~/src/supl $ ./configure --asn1c-skeletons /path/to/asn1c-git-HEAD
 
 
-== Getting MCC, MNC, LAC and CI ==
+## Getting MCC, MNC, LAC and CI
 
 You need to provide your position estimate to supl server as
 cellular transmitter tower ids. One way to get them is to

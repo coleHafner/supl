@@ -1,0 +1,11 @@
+config.mk
+src/asn-supl/*.c
+src/asn-supl/*.h
+src/asn-supl/*.o
+src/asn-rrlp/*.c
+src/asn-rrlp/*.h
+src/asn-rrlp/*.o
+*.so*
+*.a
+*.stamp
+src/supl*
