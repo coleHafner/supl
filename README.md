@@ -19,16 +19,22 @@ from it. The received data can then be fed to a GPS receiver (assuming
 the receiver accepts such data) to speed up satellite aquistion.
 
 Usage:
+```
 supl-client options [supl-server]
 Options:
-  --cell gsm:mcc,mns:lac,ci|wcdma:mcc,msn,uc	set current gsm/wcdma cell id
-  --cell gsm:mcc,mns:lac,ci:lat,lon,uncert	set known gsm cell id with position
-  --format human				machine parseable output
-  --debug n					1 == RRLP, 2 == SUPL, 4 == DEBUG
-  --debug-file file				write debug to file
-  --help                                        show this help
+  # set current gsm/wcdma cell id
+  --cell                    gsm:mcc,mns:lac,ci|wcdma:mcc,msn,uc	
+
+  # set known gsm cell id with position
+  --cell                    gsm:mcc,mns:lac,ci:lat,lon,uncert	
+
+  --format human            machine parseable output
+  --debug n                 1 == RRLP, 2 == SUPL, 4 == DEBUG
+  --debug-file file         write debug to file
+  --help                    show this help
+```
 Example:
-supl-client --cell=gsm:244,5:0x59e2,0x31b0:60.169995,24.939995,127 --cell=gsm:244,5:0x59e2,0x31b0
+`supl-client --cell=gsm:244,5:0x59e2,0x31b0:60.169995,24.939995,127 --cell=gsm:244,5:0x59e2,0x31b0`
 
 The default SUPL server is supl.nokia.com.
 
@@ -100,10 +106,11 @@ current directory. CA private key ca-priv.pem is not needed anymore.
 ## Compile without ASN.1 compiler
 
 If you do not have asn1c (http://lionet.info/asn1c) available do:
-
+```
 ~/src/supl $ ./configure --precompiled-asn1
 ~/src/supl $ make
 ~/src/supl $ sudo make install
+```
 
 That's it.
 
@@ -114,25 +121,24 @@ You should use asn1c version 0.9.23, there are some issues with
 earlier versions.
 
 Get the asn1c source from http://lionet.info/asn1c/download.html or
-clone the git repository
-
-~src/ $ git clone git://github.com/vlm/asn1c.git
+clone the git repository: `~src/ $ git clone git://github.com/vlm/asn1c.git`
 
 and then configure, compile and install it first:
-
+```
 ~/src/ $ cd asn1c
 ~/src/asn1c $ make
 ~/src/asn1c $ sudo make install
-
+```
 You may want get rid of your distribution provided asn1c compiler
 first, or at least make sure the following compilation uses this newer
 version.
 
 Then proceed with compiling this stuff
-
+```
 ~/src/supl $ ./configure
 ~/src/supl $ make
 ~/src/supl $ sudo make install
+```
 
 
 ## Fixing ASN specs
